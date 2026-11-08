@@ -1,0 +1,14 @@
+{
+  "name": "Ruta175",
+  "short_name": "Ruta175",
+  "description": "Navegación en el tablero de tu SYM ADX TG 175.",
+  "lang": "es-CO",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0c0f",
+  "theme_color": "#0b0c0f",
+  "icons": [
+    { "src": "/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/img/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

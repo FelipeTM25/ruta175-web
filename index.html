@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ruta175: navegación en el tablero de tu ADX TG 175</title>
+  <meta name="description" content="App para la SYM ADX TG 175: mapa giro a giro en la pantalla de la moto, gasolina, batería y avisos en vivo, y mantenimiento por km. iPhone y Android.">
+  <link rel="canonical" href="https://ruta175.app/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0b0c0f">
+  <meta name="color-scheme" content="dark">
+  <meta name="application-name" content="Ruta175">
+  <meta name="apple-mobile-web-app-title" content="Ruta175">
+
+  <!-- Al compartir el link (WhatsApp, Facebook, X, LinkedIn…) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ruta175">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:url" content="https://ruta175.app/">
+  <meta property="og:title" content="Ruta175: tu celular en el tablero de tu ADX TG 175">
+  <meta property="og:description" content="Navegación giro a giro en la pantalla de la moto, tu moto en vivo y mantenimiento por kilómetros. Sin cables, sin modificar nada. iPhone y Android.">
+  <meta property="og:image" content="https://ruta175.app/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Tablero de la ADX TG 175 mostrando el mapa de Ruta175 con el próximo giro">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ruta175: tu celular en el tablero de tu ADX TG 175">
+  <meta name="twitter:description" content="Navegación giro a giro en la pantalla de la moto. iPhone y Android.">
+  <meta name="twitter:image" content="https://ruta175.app/img/og.png">
+
+  <link rel="icon" href="img/icono.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Datos para Google: qué es la app, quién la hace y las preguntas frecuentes -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://ruta175.app/#org",
+        "name": "Ruta175",
+        "url": "https://ruta175.app/",
+        "logo": "https://ruta175.app/img/icon-512.png"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://ruta175.app/#web",
+        "url": "https://ruta175.app/",
+        "name": "Ruta175",
+        "inLanguage": "es-CO",
+        "publisher": { "@id": "https://ruta175.app/#org" }
+      },
+      {
+        "@type": "MobileApplication",
+        "name": "Ruta175",
+        "operatingSystem": "iOS, Android",
+        "applicationCategory": "TravelApplication",
+        "description": "App para la SYM ADX TG 175 que muestra la navegación giro a giro en la pantalla del tablero y lee los datos de la moto en vivo: gasolina, batería, odómetro y avisos.",
+        "image": "https://ruta175.app/img/og.png",
+        "inLanguage": "es-CO",
+        "countriesSupported": "CO",
+        "publisher": { "@id": "https://ruta175.app/#org" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "¿Cómo conecto el celular al tablero de la ADX TG 175?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Abre Ruta175 y escanea el QR que muestra el tablero de la moto. El celular entra al WiFi del tablero y se reconecta solo cada vez que abres la app." } },
+          { "@type": "Question", "name": "¿Hay que modificar la moto o instalar algo?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. El tablero de la ADX TG 175 ya trae WiFi. La app se conecta a esa red; no hay cables, adaptadores ni cambios en la moto." } },
+          { "@type": "Question", "name": "¿Con qué motos funciona?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Con la SYM ADX TG 175 con tablero TFT. Es la única moto en la que la probamos." } },
+          { "@type": "Question", "name": "¿Funciona en iPhone?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Sí, en iPhone y en Android. En iPhone el tablero muestra las llamadas pero no los mensajes, porque Apple no deja que las apps lean las notificaciones de otras." } },
+          { "@type": "Question", "name": "¿Necesito datos móviles?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Para buscar lugares y calcular rutas, sí: la app usa tus datos. La conexión con la moto va por el WiFi del tablero y no gasta datos." } }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,600..900&family=Manrope:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="Ruta175, inicio">
+      <img src="img/icono.svg" alt="" width="36" height="36">
+      <span>Ruta<b>175</b></span>
+    </a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#funciones">Funciones</a>
+      <a href="#como">Cómo funciona</a>
+      <a href="#precio">Precio</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+    <span class="pill">Muy pronto</span>
+  </div>
+</header>
+
+<main>
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">Para la SYM ADX TG 175</span>
+        <h1>Tu celular, en el <span class="accent">tablero</span> de tu moto.</h1>
+        <p class="lede">Buscas a dónde vas, arrancas, y el mapa con cada giro aparece en la pantalla de la moto. El celular va guardado. La moto no se toca.</p>
+        <div class="stores">
+          <span class="store" aria-label="App Store, muy pronto">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg>
+            <span><small>Para iPhone</small><strong>App Store</strong></span>
+            <span class="soon">Muy pronto</span>
+          </span>
+          <span class="store" aria-label="Google Play, muy pronto">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5v17l14-8.5z"/><path d="M5 3.5l9 9m-9 8l9-8"/></svg>
+            <span><small>Para Android</small><strong>Google Play</strong></span>
+            <span class="soon">Muy pronto</span>
+          </span>
+        </div>
+        <p class="trial">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+          3 días gratis para probarla. Sin tarjeta.
+        </p>
+      </div>
+
+      <div class="hero-art" aria-label="El tablero de la moto mostrando la navegación de Ruta175">
+        <!-- La pantalla del tablero, con la esquina inferior derecha cortada como la real -->
+        <svg class="dash" id="dash" viewBox="0 0 460 222" role="img" aria-label="Ejemplo: tablero con mapa, giro a la derecha en 210 metros">
+          <defs>
+            <clipPath id="screen"><path d="M26 14 H434 Q446 14 446 26 V158 L392 208 H26 Q14 208 14 196 V26 Q14 14 26 14 Z"/></clipPath>
+            <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b0c0f" stop-opacity="0"/><stop offset="1" stop-color="#0b0c0f" stop-opacity=".55"/></linearGradient>
+          </defs>
+          <path d="M24 6 H436 Q454 6 454 24 V161 L395 216 H24 Q6 216 6 198 V24 Q6 6 24 6 Z" fill="#050506" stroke="#ff7a1a" stroke-width="3"/>
+          <g clip-path="url(#screen)">
+            <rect x="0" y="0" width="460" height="222" fill="#101217"/>
+            <!-- calles -->
+            <g stroke="#232730" stroke-width="10" stroke-linecap="round" fill="none">
+              <path d="M-10 60 L470 30"/><path d="M-10 150 L470 120"/><path d="M110 -10 L60 240"/><path d="M250 -10 L210 240"/><path d="M380 -10 L350 240"/>
+            </g>
+            <g stroke="#1a1d24" stroke-width="5" stroke-linecap="round" fill="none">
+              <path d="M-10 105 L470 75"/><path d="M180 -10 L140 240"/><path d="M320 -10 L285 240"/><path d="M-10 195 L470 165"/>
+            </g>
+            <!-- ruta -->
+            <path d="M70 230 C 80 180, 120 160, 168 148 S 262 128, 290 96 S 352 46, 430 40" fill="none" stroke="#7a3300" stroke-width="13" stroke-linecap="round"/>
+            <path id="routePath" class="route" d="M70 230 C 80 180, 120 160, 168 148 S 262 128, 290 96 S 352 46, 430 40" fill="none" stroke="#ff7a1a" stroke-width="8" stroke-linecap="round"/>
+            <!-- flecha que avanza por la ruta -->
+            <g>
+              <path d="M11 0 L-8 -9 L-3 0 L-8 9 Z" fill="#ffffff" stroke="#ff7a1a" stroke-width="2.5" stroke-linejoin="round"/>
+              <animateMotion dur="10s" begin="2.6s" repeatCount="indefinite" rotate="auto" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
+                <mpath href="#routePath"/>
+              </animateMotion>
+            </g>
+            <rect x="0" y="0" width="460" height="222" fill="url(#fade)"/>
+            <!-- próxima maniobra -->
+            <g transform="translate(26 26)">
+              <rect width="176" height="64" rx="14" fill="#0b0c0f" fill-opacity=".92" stroke="#2a2e36"/>
+              <rect x="8" y="8" width="48" height="48" rx="10" fill="#ff7a1a"/>
+              <path d="M24 46 V30 Q24 24 30 24 H40 M35 18 L41 24 L35 30" fill="none" stroke="#140a02" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="68" y="34" fill="#ffffff" font-family="Archivo, Arial, sans-serif" font-weight="900" font-size="24" id="dist">210 m</text>
+              <text x="68" y="52" fill="#9aa1ab" font-family="Manrope, Arial, sans-serif" font-weight="600" font-size="12">Gira a la derecha</text>
+            </g>
+            <!-- reloj -->
+            <g transform="translate(372 26)">
+              <rect width="62" height="30" rx="10" fill="#0b0c0f" fill-opacity=".92" stroke="#2a2e36"/>
+              <text x="31" y="20" text-anchor="middle" fill="#ffffff" font-family="Archivo, Arial, sans-serif" font-weight="800" font-size="15">9:41</text>
+            </g>
+            <!-- llegada -->
+            <g transform="translate(26 168)">
+              <rect width="150" height="28" rx="10" fill="#0b0c0f" fill-opacity=".92" stroke="#2a2e36"/>
+              <text x="12" y="19" fill="#3ddc84" font-family="Manrope, Arial, sans-serif" font-weight="800" font-size="12">Llegas 9:58</text>
+              <text x="92" y="19" fill="#9aa1ab" font-family="Manrope, Arial, sans-serif" font-weight="600" font-size="12">6,4 km</text>
+            </g>
+          </g>
+        </svg>
+        <img class="bike" src="img/adx.svg" alt="Silueta de la SYM ADX TG 175" width="420" height="290">
+        <div class="floor" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Datos rápidos ===== -->
+  <div class="facts">
+    <ul class="wrap">
+      <li><strong>0 cables</strong><span>Todo va por el WiFi del tablero</span></li>
+      <li><strong>1 QR</strong><span>Lo escaneas una vez y listo</span></li>
+      <li><strong>iPhone y Android</strong><span>La misma app en los dos</span></li>
+      <li><strong>La moto igual</strong><span>No se abre ni se modifica nada</span></li>
+    </ul>
+  </div>
+
+  <!-- ===== Funciones ===== -->
+  <section class="block" id="funciones">
+    <div class="wrap feature">
+      <div class="feature-copy">
+        <span class="eyebrow">Navegación</span>
+        <h2>Navega sin mirar el celular.</h2>
+        <p class="lede">El mapa, la flecha y el próximo giro van en la pantalla de la moto, a la altura de tus ojos.</p>
+        <ul class="checks">
+          <li><span><b>Direcciones colombianas.</b> Escribe "Calle 10 # 43-12" o el nombre del lugar.</span></li>
+          <li><span><b>Recalcula sola</b> si te sales de la ruta, y acerca el mapa antes de cada giro.</span></li>
+          <li><span><b>Vista del tablero en el celular:</b> ves en vivo lo mismo que muestra la moto.</span></li>
+          <li><span><b>Claro de día, oscuro de noche,</b> automático, para leerlo al sol y no encandilarte.</span></li>
+        </ul>
+      </div>
+      <div class="phone-stage">
+        <div class="phone"><img src="img/app-trip.jpg" alt="Pantalla Viajar de Ruta175 con la vista en vivo del tablero" loading="lazy" width="1206" height="2622"></div>
+        <div class="callout"><b>En el tablero</b>La misma imagen que ve la moto, en tu celular.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap feature flip">
+      <div class="feature-copy">
+        <span class="eyebrow">Tu moto en vivo</span>
+        <h2>Todo lo que dice la moto, a la vista.</h2>
+        <p class="lede">Ruta175 lee el tablero mientras ruedas y te lo muestra claro.</p>
+        <ul class="checks">
+          <li><span><b>Tacómetro animado</b> con velocidad y RPM, con zona roja.</span></li>
+          <li><span><b>Gasolina, batería y odómetro,</b> con los viajes A y B.</span></li>
+          <li><span><b>Avisos:</b> pata lateral abajo, poca gasolina, batería baja y control de tracción apagado.</span></li>
+        </ul>
+      </div>
+      <div class="phone-stage">
+        <div class="phone"><img src="img/app-gauge.jpg" alt="Pestaña Moto con tacómetro, gasolina, batería y odómetro" loading="lazy" width="1206" height="2622"></div>
+        <div class="callout"><b>Avisos al instante</b>Si la pata lateral queda abajo, te enteras antes de arrancar.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap feature">
+      <div class="feature-copy">
+        <span class="eyebrow">Tu garaje</span>
+        <h2>Cuida la moto con su kilometraje real.</h2>
+        <p class="lede">Como la app conoce el odómetro, te avisa cuándo toca cada cosa.</p>
+        <ul class="checks">
+          <li><span><b>Mantenimiento por kilómetros:</b> aceite, filtro, frenos, bujía y correa, en verde, amarillo o rojo.</span></li>
+          <li><span><b>Gasolina:</b> anota la tanqueada y ve cuántos km haces por galón y cuánto gastas al mes.</span></li>
+          <li><span><b>¿Dónde dejé la moto?</b> Al apagarla, guardamos el punto y te llevamos caminando.</span></li>
+          <li><span><b>Resumen de cada viaje:</b> distancia, tiempo y velocidad promedio y máxima.</span></li>
+        </ul>
+      </div>
+      <div class="phone-stage">
+        <div class="phone"><img src="img/app-garage.jpg" alt="Mantenimiento por kilómetros y registro de gasolina en Ruta175" loading="lazy" width="1206" height="2622"></div>
+        <div class="callout"><b>109 km por galón</b>Calculado con tus propias tanqueadas.</div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="extras">
+        <article class="extra">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></div>
+          <h3>Llamadas en el tablero</h3>
+          <p>Te avisa cuando te llaman. En Android, también los mensajes de las apps que elijas.</p>
+        </article>
+        <article class="extra">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 12h18M6 8l-2-2M18 8l2-2M6 16l-2 2M18 16l2 2"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Luces RGB</h3>
+          <p>Controla las tiras LED Bluetooth de la moto: color, efectos y brillo, con un toque.</p>
+        </article>
+        <article class="extra">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></div>
+          <h3>Modo ahorro</h3>
+          <p>Pantalla del celular en negro mientras navegas, para que la batería dure el viaje.</p>
+        </article>
+        <article class="extra">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V5.5a1.5 1.5 0 0 1 3 0V12m0-1.5v-2a1.5 1.5 0 0 1 3 0V12m0-1a1.5 1.5 0 0 1 3 0v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-5-2.7l-2.6-4a1.5 1.5 0 0 1 2.4-1.8L8 15"/></svg></div>
+          <h3>Hecha para guantes</h3>
+          <p>Botones grandes y vibraciones que confirman cada acción sin mirar la pantalla.</p>
+        </article>
+        <article class="extra">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+          <h3>Destinos recientes</h3>
+          <p>Tus lugares de siempre quedan a un toque para salir rápido.</p>
+        </article>
+        <article class="extra">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Tus datos en tu celular</h3>
+          <p>La conexión con la moto es local. Tu moto, tus viajes y tus ajustes se guardan en tu celular; para buscar y calcular rutas solo se envía lo necesario.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Cómo funciona ===== -->
+  <section class="block" id="como">
+    <div class="wrap">
+      <span class="eyebrow">Cómo funciona</span>
+      <h2>Listo en un minuto.</h2>
+      <ol class="steps">
+        <li><h3>Escanea el QR del tablero</h3><p>La ADX TG 175 lo muestra en su pantalla. Solo se hace la primera vez.</p></li>
+        <li><h3>Se conecta sola</h3><p>El celular entra al WiFi del tablero y se reconecta cada vez que abres la app.</p></li>
+        <li><h3>Busca y arranca</h3><p>Elige el destino, toca Iniciar y guarda el celular. La guía va en la moto.</p></li>
+      </ol>
+      <p class="note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+        Sin cables, sin adaptadores y sin abrir nada de la moto.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Precio ===== -->
+  <section class="block" id="precio">
+    <div class="wrap">
+      <div class="price">
+        <div style="display:grid;gap:18px;position:relative;z-index:1">
+          <span class="eyebrow">Precio</span>
+          <p class="price-big">3 días<small>gratis, para probarla en tu moto</small></p>
+          <p class="lede">Sin tarjeta y sin compromiso. Después eliges un plan de 6 meses o uno de por vida.</p>
+        </div>
+        <div class="stores" style="flex-direction:column;align-items:stretch">
+          <span class="store" aria-label="App Store, muy pronto">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg>
+            <span><small>Para iPhone</small><strong>App Store</strong></span>
+            <span class="soon">Muy pronto</span>
+          </span>
+          <span class="store" aria-label="Google Play, muy pronto">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5v17l14-8.5z"/><path d="M5 3.5l9 9m-9 8l9-8"/></svg>
+            <span><small>Para Android</small><strong>Google Play</strong></span>
+            <span class="soon">Muy pronto</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Preguntas ===== -->
+  <section class="block" id="preguntas">
+    <div class="wrap">
+      <span class="eyebrow">Preguntas</span>
+      <h2>Lo que más nos preguntan.</h2>
+      <div class="faq">
+        <details>
+          <summary>¿Cómo conecto el celular al tablero de la ADX TG 175?</summary>
+          <p>Abre Ruta175 y escanea el QR que muestra el tablero de la moto. El celular entra al WiFi del tablero y se reconecta solo cada vez que abres la app.</p>
+        </details>
+        <details>
+          <summary>¿Hay que modificar la moto o instalar algo?</summary>
+          <p>No. El tablero de la ADX TG 175 ya trae WiFi. La app se conecta a esa red; no hay cables, adaptadores ni cambios en la moto.</p>
+        </details>
+        <details>
+          <summary>¿Con qué motos funciona?</summary>
+          <p>Con la SYM ADX TG 175 con tablero TFT. Es la única moto en la que la probamos.</p>
+        </details>
+        <details>
+          <summary>¿Funciona en iPhone?</summary>
+          <p>Sí, en iPhone y en Android. En iPhone el tablero muestra las llamadas pero no los mensajes, porque Apple no deja que las apps lean las notificaciones de otras.</p>
+        </details>
+        <details>
+          <summary>¿Necesito datos móviles?</summary>
+          <p>Para buscar lugares y calcular rutas, sí: la app usa tus datos. La conexión con la moto va por el WiFi del tablero y no gasta datos.</p>
+        </details>
+        <details>
+          <summary>¿Gasta mucha batería?</summary>
+          <p>El celular dibuja el mapa que va al tablero, así que gasta más que con la pantalla apagada. El modo ahorro deja la pantalla del celular en negro mientras navegas, y en viajes largos conviene llevarlo cargando.</p>
+        </details>
+        <details>
+          <summary>¿Puedo controlar las luces LED de la moto?</summary>
+          <p>Sí, si son tiras LED Bluetooth (tipo ELK-BLEDOM). Las buscas una vez y luego las enciendes, cambias de color o de efecto desde la app.</p>
+        </details>
+        <details>
+          <summary>¿Cuándo sale?</summary>
+          <p>Estamos terminando las pruebas en la moto. Sale primero en App Store y Google Play, con 3 días gratis para probarla.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="Ruta175, volver arriba">
+      <img src="img/icono.svg" alt="" width="30" height="30">
+      <span>Ruta<b>175</b></span>
+    </a>
+    <p>Ruta175 es un proyecto independiente, hecho en Colombia, y no está afiliado a SYM. SYM y ADX son marcas de sus dueños; se mencionan solo para indicar con qué moto funciona la app.</p>
+    <p>Mapas © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> y <a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a> · © <span id="year">2026</span> Ruta175</p>
+  </div>
+</footer>
+
+<script>
+  // Encabezado con borde al bajar
+  const header = document.getElementById('top');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Tablero: la distancia al giro baja mientras la flecha avanza (ciclo de 10 s)
+  const dash = document.getElementById('dash');
+  const dist = document.getElementById('dist');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) {
+    dash.pauseAnimations && dash.pauseAnimations();
+  } else {
+    const t0 = performance.now() + 2600;
+    const tick = (now) => {
+      const t = Math.max(0, now - t0) % 10000;
+      const m = Math.max(0, Math.round((210 * (1 - t / 6000)) / 10) * 10);
+      dist.textContent = t > 6000 ? 'Ahora' : `${m} m`;
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+</script>
+</body>
+</html>
