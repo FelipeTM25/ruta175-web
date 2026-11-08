@@ -133,50 +133,50 @@
 
       <div class="hero-art" aria-label="El tablero de la moto mostrando la navegación de Ruta175">
         <!-- La pantalla del tablero, con la esquina inferior derecha cortada como la real -->
-        <svg class="dash" id="dash" viewBox="0 0 460 222" role="img" aria-label="Ejemplo: tablero con mapa, giro a la derecha en 210 metros">
+        <svg class="dash" id="dash" viewBox="0 0 460 222" role="img" aria-label="Ejemplo: el tablero de la moto con el mapa de Ruta175 guiando giro a giro por las calles">
           <defs>
             <clipPath id="screen"><path d="M26 14 H434 Q446 14 446 26 V158 L392 208 H26 Q14 208 14 196 V26 Q14 14 26 14 Z"/></clipPath>
-            <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b0c0f" stop-opacity="0"/><stop offset="1" stop-color="#0b0c0f" stop-opacity=".55"/></linearGradient>
+            <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#0b0c0f" stop-opacity=".55"/><stop offset=".22" stop-color="#0b0c0f" stop-opacity="0"/>
+              <stop offset=".8" stop-color="#0b0c0f" stop-opacity="0"/><stop offset="1" stop-color="#0b0c0f" stop-opacity=".5"/>
+            </linearGradient>
+            <radialGradient id="halo"><stop offset="0" stop-color="#ff7a1a" stop-opacity=".45"/><stop offset="1" stop-color="#ff7a1a" stop-opacity="0"/></radialGradient>
           </defs>
           <path d="M24 6 H436 Q454 6 454 24 V161 L395 216 H24 Q6 216 6 198 V24 Q6 6 24 6 Z" fill="#050506" stroke="#ff7a1a" stroke-width="3"/>
           <g clip-path="url(#screen)">
-            <rect x="0" y="0" width="460" height="222" fill="#101217"/>
-            <!-- calles -->
-            <g stroke="#232730" stroke-width="10" stroke-linecap="round" fill="none">
-              <path d="M-10 60 L470 30"/><path d="M-10 150 L470 120"/><path d="M110 -10 L60 240"/><path d="M250 -10 L210 240"/><path d="M380 -10 L350 240"/>
+            <rect width="460" height="222" fill="#272b34"/>
+            <!-- La cámara mueve y gira el mapa; la flecha queda fija, como en la navegación real -->
+            <g id="cam" transform="translate(318 168) scale(.66) rotate(0) translate(-240 -1440)">
+              <g id="world"></g>
+              <path id="routeCase" fill="none" stroke="#7a3300" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+              <path id="routeLine" fill="none" stroke="#ff7a1a" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+              <path id="routeDone" fill="none" stroke="#4a505c" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+              <g id="goal"></g>
             </g>
-            <g stroke="#1a1d24" stroke-width="5" stroke-linecap="round" fill="none">
-              <path d="M-10 105 L470 75"/><path d="M180 -10 L140 240"/><path d="M320 -10 L285 240"/><path d="M-10 195 L470 165"/>
-            </g>
-            <!-- ruta -->
-            <path d="M70 230 C 80 180, 120 160, 168 148 S 262 128, 290 96 S 352 46, 430 40" fill="none" stroke="#7a3300" stroke-width="13" stroke-linecap="round"/>
-            <path id="routePath" class="route" d="M70 230 C 80 180, 120 160, 168 148 S 262 128, 290 96 S 352 46, 430 40" fill="none" stroke="#ff7a1a" stroke-width="8" stroke-linecap="round"/>
-            <!-- flecha que avanza por la ruta -->
-            <g>
-              <path d="M11 0 L-8 -9 L-3 0 L-8 9 Z" fill="#ffffff" stroke="#ff7a1a" stroke-width="2.5" stroke-linejoin="round"/>
-              <animateMotion dur="10s" begin="2.6s" repeatCount="indefinite" rotate="auto" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
-                <mpath href="#routePath"/>
-              </animateMotion>
-            </g>
-            <rect x="0" y="0" width="460" height="222" fill="url(#fade)"/>
-            <!-- próxima maniobra -->
-            <g transform="translate(26 26)">
-              <rect width="176" height="64" rx="14" fill="#0b0c0f" fill-opacity=".92" stroke="#2a2e36"/>
+            <!-- Tu posición -->
+            <circle cx="318" cy="168" r="26" fill="url(#halo)"/>
+            <path d="M318 154 L329 180 L318 174 L307 180 Z" fill="#ffffff" stroke="#ff7a1a" stroke-width="3" stroke-linejoin="round"/>
+            <rect width="460" height="222" fill="url(#fade)"/>
+            <!-- Próxima maniobra -->
+            <g transform="translate(26 24)">
+              <rect width="222" height="64" rx="14" fill="#0b0c0f" fill-opacity=".93" stroke="#2a2e36"/>
               <rect x="8" y="8" width="48" height="48" rx="10" fill="#ff7a1a"/>
-              <path d="M24 46 V30 Q24 24 30 24 H40 M35 18 L41 24 L35 30" fill="none" stroke="#140a02" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <text x="68" y="34" fill="#ffffff" font-family="Archivo, Arial, sans-serif" font-weight="900" font-size="24" id="dist">210 m</text>
-              <text x="68" y="52" fill="#9aa1ab" font-family="Manrope, Arial, sans-serif" font-weight="600" font-size="12">Gira a la derecha</text>
+              <g id="icRight"><path d="M24 46 V30 Q24 24 30 24 H40 M35 18 L41 24 L35 30" fill="none" stroke="#140a02" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+              <g id="icLeft" transform="translate(64 0) scale(-1 1)" style="display:none"><path d="M24 46 V30 Q24 24 30 24 H40 M35 18 L41 24 L35 30" fill="none" stroke="#140a02" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+              <g id="icFlag" style="display:none"><path d="M24 47 V17 M24 18 H41 L37 24 L41 30 H24" fill="none" stroke="#140a02" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g>
+              <text x="68" y="33" fill="#ffffff" font-family="Archivo, Arial, sans-serif" font-weight="900" font-size="24" id="dist">240 m</text>
+              <text x="68" y="51" fill="#9aa1ab" font-family="Manrope, Arial, sans-serif" font-weight="600" font-size="11.5" id="instr">Gira a la derecha · Calle 52</text>
             </g>
-            <!-- reloj -->
-            <g transform="translate(372 26)">
-              <rect width="62" height="30" rx="10" fill="#0b0c0f" fill-opacity=".92" stroke="#2a2e36"/>
+            <!-- Reloj -->
+            <g transform="translate(372 24)">
+              <rect width="62" height="30" rx="10" fill="#0b0c0f" fill-opacity=".93" stroke="#2a2e36"/>
               <text x="31" y="20" text-anchor="middle" fill="#ffffff" font-family="Archivo, Arial, sans-serif" font-weight="800" font-size="15">9:41</text>
             </g>
-            <!-- llegada -->
+            <!-- Llegada -->
             <g transform="translate(26 168)">
-              <rect width="150" height="28" rx="10" fill="#0b0c0f" fill-opacity=".92" stroke="#2a2e36"/>
-              <text x="12" y="19" fill="#3ddc84" font-family="Manrope, Arial, sans-serif" font-weight="800" font-size="12">Llegas 9:58</text>
-              <text x="92" y="19" fill="#9aa1ab" font-family="Manrope, Arial, sans-serif" font-weight="600" font-size="12">6,4 km</text>
+              <rect width="150" height="28" rx="10" fill="#0b0c0f" fill-opacity=".93" stroke="#2a2e36"/>
+              <text x="12" y="19" fill="#3ddc84" font-family="Manrope, Arial, sans-serif" font-weight="800" font-size="12" id="eta">Llegas 9:45</text>
+              <text x="94" y="19" fill="#9aa1ab" font-family="Manrope, Arial, sans-serif" font-weight="600" font-size="12" id="left">1,4 km</text>
             </g>
           </g>
         </svg>
@@ -395,22 +395,140 @@
   onScroll();
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Tablero: la distancia al giro baja mientras la flecha avanza (ciclo de 10 s)
-  const dash = document.getElementById('dash');
-  const dist = document.getElementById('dist');
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce) {
-    dash.pauseAnimations && dash.pauseAnimations();
-  } else {
-    const t0 = performance.now() + 2600;
+  // ---- Tablero animado: mapa de cuadras que se mueve y gira; la flecha queda fija ----
+  (() => {
+    const NS = 'http://www.w3.org/2000/svg';
+    const $ = (id) => document.getElementById(id);
+    const el = (tag, attrs, parent) => {
+      const n = document.createElementNS(NS, tag);
+      for (const k in attrs) n.setAttribute(k, attrs[k]);
+      parent.appendChild(n);
+      return n;
+    };
+    // Aleatorio con semilla: el mismo barrio en cada visita
+    let seed = 175;
+    const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+
+    const R = 120;                                   // una cuadra (unidades del mapa)
+    const roadW = (k) => (k % 4 === 0 ? 34 : 22);   // cada 4 calles, una avenida
+    const X0 = -3, X1 = 14, Y0 = -2, Y1 = 14;        // barrio visible alrededor de la ruta
+    const world = $('world');
+
+    // Avenidas un poco más claras
+    for (let i = X0; i <= X1; i++) if (i % 4 === 0) el('rect', { x: i * R - 17, y: Y0 * R, width: 34, height: (Y1 - Y0) * R, fill: '#30353f' }, world);
+    for (let j = Y0; j <= Y1; j++) if (j % 4 === 0) el('rect', { x: X0 * R, y: j * R - 17, width: (X1 - X0) * R, height: 34, fill: '#30353f' }, world);
+
+    // Manzanas con edificios; algunas son parques
+    for (let i = X0; i < X1; i++) {
+      for (let j = Y0; j < Y1; j++) {
+        const x = i * R + roadW(i) / 2, y = j * R + roadW(j) / 2;
+        const w = R - roadW(i) / 2 - roadW(i + 1) / 2, h = R - roadW(j) / 2 - roadW(j + 1) / 2;
+        const park = rnd() < 0.07;
+        el('rect', { x, y, width: w, height: h, rx: 6, fill: park ? '#11251b' : '#15181e' }, world);
+        if (park) {
+          for (let t = 0; t < 6; t++) el('circle', { cx: x + 12 + rnd() * (w - 24), cy: y + 12 + rnd() * (h - 24), r: 5 + rnd() * 5, fill: '#16301f' }, world);
+          continue;
+        }
+        const cols = 2 + Math.floor(rnd() * 2), rows = 2;
+        for (let a = 0; a < cols; a++) for (let b = 0; b < rows; b++) {
+          if (rnd() < 0.18) continue;
+          const bw = (w - 8) / cols, bh = (h - 8) / rows;
+          el('rect', { x: x + 4 + a * bw + 2, y: y + 4 + b * bh + 2, width: bw - 4 - rnd() * 6, height: bh - 4 - rnd() * 6, rx: 2, fill: rnd() < 0.5 ? '#1b1e26' : '#1e222b' }, world);
+        }
+      }
+    }
+    // Nombres de calles (carreras verticales, calles horizontales, como en Colombia)
+    const label = (txt, x, y, rot) => el('text', { x, y, transform: rot ? `rotate(-90 ${x} ${y})` : '', 'text-anchor': 'middle', 'dominant-baseline': 'middle', fill: '#6b7280', 'font-family': 'Manrope, Arial, sans-serif', 'font-weight': 700, 'font-size': 15, 'letter-spacing': 1 }, world).textContent = txt;
+    for (let i = X0 + 1; i < X1; i++) for (let j = Y0; j < Y1; j += 3) label(`CARRERA ${50 + i}`, i * R, j * R + R / 2, true);
+    for (let j = Y0 + 1; j < Y1; j++) for (let i = X0 + 1; i < X1; i += 3) label(`CALLE ${60 - j}`, i * R + R / 2, j * R, false);
+
+    // La ruta va por el centro de las calles
+    const P = [[240, 1440], [240, 960], [720, 960], [720, 480], [1320, 480], [1320, 240]];
+    const street = (a, b) => (a[0] === b[0] ? `Carrera ${50 + a[0] / R}` : `Calle ${60 - a[1] / R}`);
+    const segs = [];
+    let total = 0;
+    for (let k = 0; k < P.length - 1; k++) {
+      const [ax, ay] = P[k], [bx, by] = P[k + 1];
+      const len = Math.hypot(bx - ax, by - ay);
+      segs.push({ a: P[k], b: P[k + 1], start: total, len, h: Math.atan2(bx - ax, ay - by) * 180 / Math.PI, name: street(P[k], P[k + 1]) });
+      total += len;
+    }
+    const d = 'M' + P.map((p) => p.join(' ')).join(' L');
+    ['routeCase', 'routeLine', 'routeDone'].forEach((id) => $(id).setAttribute('d', d));
+    const done = $('routeDone');
+    done.setAttribute('stroke-dasharray', `0 ${total + 10}`);
+    // Destino
+    const [gx, gy] = P[P.length - 1];
+    el('circle', { cx: gx, cy: gy, r: 20, fill: '#3ddc84', stroke: '#0b0c0f', 'stroke-width': 6 }, $('goal'));
+    el('circle', { cx: gx, cy: gy, r: 7, fill: '#0b0c0f' }, $('goal'));
+
+    const M_PER_UNIT = 0.6;       // escala: ~1,4 km de ruta
+    const turns = segs.slice(1).map((s, k) => {
+      let delta = s.h - segs[k].h;
+      delta = ((delta + 540) % 360) - 180;
+      return { at: s.start, from: segs[k].h, delta, dir: delta > 0 ? 'right' : 'left', name: s.name };
+    });
+
+    const posAt = (x) => {
+      const s = segs.find((g) => x <= g.start + g.len) || segs[segs.length - 1];
+      const t = Math.min(1, (x - s.start) / s.len);
+      return [s.a[0] + (s.b[0] - s.a[0]) * t, s.a[1] + (s.b[1] - s.a[1]) * t, s];
+    };
+    const smooth = (t) => t * t * (3 - 2 * t);
+    const headingAt = (x) => {
+      let h = posAt(x)[2].h;
+      for (const tr of turns) {
+        const W = 34;
+        if (Math.abs(x - tr.at) < W) h = tr.from + tr.delta * smooth((x - tr.at + W) / (2 * W));
+      }
+      return h;
+    };
+
+    const cam = $('cam'), dist = $('dist'), instr = $('instr'), left = $('left'), eta = $('eta');
+    const ic = { right: $('icRight'), left: $('icLeft'), flag: $('icFlag') };
+    const show = (k) => { for (const n in ic) ic[n].style.display = n === k ? '' : 'none'; };
+    const fmtKm = (m) => (m >= 1000 ? `${(m / 1000).toFixed(1).replace('.', ',')} km` : `${Math.round(m / 10) * 10} m`);
+
+    const draw = (x) => {
+      const [px, py] = posAt(x);
+      cam.setAttribute('transform', `translate(318 168) scale(.66) rotate(${-headingAt(x)}) translate(${-px} ${-py})`);
+      done.setAttribute('stroke-dasharray', `${x} ${total + 10}`);
+      const next = turns.find((tr) => tr.at > x - 4);
+      const remain = (total - x) * M_PER_UNIT;
+      if (next) {
+        const m = (next.at - x) * M_PER_UNIT;
+        dist.textContent = m < 12 ? 'Ahora' : `${Math.round(m / 10) * 10} m`;
+        instr.textContent = `Gira a la ${next.dir === 'right' ? 'derecha' : 'izquierda'} · ${next.name}`;
+        show(next.dir);
+      } else {
+        dist.textContent = remain < 12 ? 'Llegaste' : fmtKm(remain);
+        instr.textContent = 'Tu destino está adelante';
+        show('flag');
+      }
+      left.textContent = fmtKm(Math.max(0, remain));
+      eta.textContent = `Llegas 9:${String(41 + Math.ceil(remain / 1000 * 3)).padStart(2, '0')}`;
+    };
+
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { draw(300); return; }
+
+    // Avanza más despacio al acercarse a cada esquina; pausa al llegar y vuelve a empezar
+    let x = 0, last = 0, pauseUntil = 0, visible = true;
+    new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe($('dash'));
     const tick = (now) => {
-      const t = Math.max(0, now - t0) % 10000;
-      const m = Math.max(0, Math.round((210 * (1 - t / 6000)) / 10) * 10);
-      dist.textContent = t > 6000 ? 'Ahora' : `${m} m`;
+      const dt = Math.min(0.05, (now - (last || now)) / 1000);
+      last = now;
+      if (visible && !document.hidden && now > pauseUntil) {
+        const toTurn = Math.min(...turns.map((tr) => Math.abs(tr.at - x)), 9999);
+        const v = 150 * (0.45 + 0.55 * Math.min(1, toTurn / 110));
+        x += v * dt;
+        if (x >= total) { x = total; pauseUntil = now + 2200; draw(x); x = 0; requestAnimationFrame(tick); return; }
+        draw(x);
+      }
       requestAnimationFrame(tick);
     };
+    draw(0);
     requestAnimationFrame(tick);
-  }
+  })();
 </script>
 </body>
 </html>
