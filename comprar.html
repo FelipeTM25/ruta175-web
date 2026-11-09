@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0c0f">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="/img/icono.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,600..900&family=Manrope:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Comprar Ruta175 · pago en pesos</title>
+  <meta name="description" content="Compra Ruta175 en pesos colombianos con PSE, Nequi, Bancolombia o tarjeta y recibe tu código al instante.">
+  <link rel="canonical" href="https://ruta175.app/comprar.html">
+  <style>
+    .plans{display:grid;gap:14px;grid-template-columns:repeat(3,1fr);margin-top:28px}
+    @media(max-width:760px){.plans{grid-template-columns:1fr}}
+    .plan{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;gap:10px;align-content:start}
+    .plan.best{border-color:var(--accent)}
+    .plan h2{font-size:20px}
+    .plan .p{font-family:var(--display);font-weight:900;font-size:36px;letter-spacing:-.02em}
+    .plan .p small{font-size:14px;color:var(--muted);font-weight:700}
+    .plan p{color:var(--muted);font-size:15px}
+    .buy{display:block;text-align:center;background:var(--accent);color:#1a0b00;font-weight:800;padding:13px 16px;border-radius:12px;margin-top:6px}
+    .fine{color:var(--muted);font-size:14px;margin-top:22px;max-width:70ch}
+  </style>
+</head>
+<body>
+  <main class="wrap" style="padding-block:56px">
+    <a href="/" style="color:var(--accent);font-weight:800">← Ruta175</a>
+    <h1 style="margin-top:18px">Elige tu plan</h1>
+    <p class="lede">Pagas en pesos con PSE, Nequi, Bancolombia o tarjeta. Al terminar te mostramos un código para activar Premium en tu moto.</p>
+    <div class="plans">
+      <div class="plan"><h2>Mensual</h2><div class="p">$7.900<small> /mes</small></div><p>Un mes de Premium, sin renovación automática.</p><a class="buy" href="https://xjbuetfrliockslghslk.supabase.co/functions/v1/wompi-crear-pago?plan=mensual">Pagar $7.900</a></div>
+      <div class="plan"><h2>6 meses</h2><div class="p">$19.900</div><p>Seis meses de Premium en tu moto.</p><a class="buy" href="https://xjbuetfrliockslghslk.supabase.co/functions/v1/wompi-crear-pago?plan=6meses">Pagar $19.900</a></div>
+      <div class="plan best"><h2>De por vida</h2><div class="p">$49.900</div><p>Un solo pago, Premium para siempre en tu moto.</p><a class="buy" href="https://xjbuetfrliockslghslk.supabase.co/functions/v1/wompi-crear-pago?plan=vida">Pagar $49.900</a></div>
+    </div>
+    <p class="fine"><b>Cómo se activa:</b> abre Ruta175, toca «¿Ya tienes un código?» y escribe el código que te damos al pagar. Cada código sirve para <b>una sola moto</b> (puedes usarlo en otro celular con la misma moto). Guárdalo: si lo pierdes, escríbenos con el comprobante de Wompi.</p>
+    <p class="fine">Pagos procesados por Wompi (Bancolombia). Ruta175 nunca ve los datos de tu tarjeta o cuenta.</p>
+  </main>
+</body>
+</html>
