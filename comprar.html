@@ -15,7 +15,10 @@
     .plans{display:grid;gap:14px;grid-template-columns:repeat(3,1fr);margin-top:28px}
     @media(max-width:760px){.plans{grid-template-columns:1fr}}
     .plan{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:10px}
-    .plan.best{border-color:var(--accent)}
+    .plan.best{border-color:var(--accent);background:linear-gradient(180deg,rgba(255,122,26,.16),var(--surface) 60%);box-shadow:0 10px 40px rgba(255,122,26,.25);position:relative}
+    .badge{position:absolute;top:-12px;left:22px;background:var(--accent);color:#1a0b00;font-weight:800;font-size:12px;padding:4px 12px;border-radius:99px;letter-spacing:.04em}
+    .buy{font-size:17px;box-shadow:0 6px 22px rgba(255,122,26,.3)}
+    .buy:hover{filter:brightness(1.08)}
     .plan h2{font-size:20px}
     .plan .p{font-family:var(--display);font-weight:900;font-size:36px;letter-spacing:-.02em}
     .plan .p small{font-size:14px;color:var(--muted);font-weight:700}
@@ -29,12 +32,12 @@
 <body>
   <main class="wrap" style="padding-block:56px">
     <a href="/" style="color:var(--accent);font-weight:800">← Ruta175</a>
-    <h1 style="margin-top:18px">Elige tu plan</h1>
+    <h1 style="margin-top:18px;font-size:clamp(40px,8vw,84px)">Elige tu <span style="color:var(--accent)">plan</span></h1>
     <p class="lede">Pagas en pesos con PSE, Nequi, Bancolombia o tarjeta. Al terminar te mostramos un código para activar Premium en tu moto.</p>
     <div class="plans">
       <div class="plan"><h2>Mensual</h2><div class="p">$7.900<small> /mes</small></div><p>Un mes de Premium, sin renovación automática.</p><a class="buy" href="https://xjbuetfrliockslghslk.supabase.co/functions/v1/wompi-crear-pago?plan=mensual">Pagar $7.900</a></div>
       <div class="plan"><h2>6 meses</h2><div class="p">$19.900</div><p>Seis meses de Premium en tu moto.</p><a class="buy" href="https://xjbuetfrliockslghslk.supabase.co/functions/v1/wompi-crear-pago?plan=6meses">Pagar $19.900</a></div>
-      <div class="plan best"><h2>De por vida</h2><div class="p">$49.900</div><p>Un solo pago, Premium para siempre en tu moto.</p><a class="buy" href="https://xjbuetfrliockslghslk.supabase.co/functions/v1/wompi-crear-pago?plan=vida">Pagar $49.900</a></div>
+      <div class="plan best"><span class="badge">MÁS CONVENIENTE</span><h2>De por vida</h2><div class="p">$49.900</div><p>Un solo pago, Premium para siempre en tu moto.</p><a class="buy" href="https://xjbuetfrliockslghslk.supabase.co/functions/v1/wompi-crear-pago?plan=vida">Pagar $49.900</a></div>
     </div>
     <p class="fine"><b>Cómo se activa:</b> abre Ruta175, toca «¿Ya tienes un código?» y escribe el código que te damos al pagar. Cada código sirve para <b>una sola moto</b> (puedes usarlo en otro celular con la misma moto). Guárdalo: si lo pierdes, escríbenos con el comprobante de Wompi.</p>
     <p class="fine">Pagos procesados por Wompi (Bancolombia). Ruta175 nunca ve los datos de tu tarjeta o cuenta.</p>
