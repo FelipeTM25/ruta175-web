@@ -14,13 +14,15 @@
   <style>
     .plans{display:grid;gap:14px;grid-template-columns:repeat(3,1fr);margin-top:28px}
     @media(max-width:760px){.plans{grid-template-columns:1fr}}
-    .plan{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;gap:10px;align-content:start}
+    .plan{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:10px}
     .plan.best{border-color:var(--accent)}
     .plan h2{font-size:20px}
     .plan .p{font-family:var(--display);font-weight:900;font-size:36px;letter-spacing:-.02em}
     .plan .p small{font-size:14px;color:var(--muted);font-weight:700}
     .plan p{color:var(--muted);font-size:15px}
-    .buy{display:block;text-align:center;background:var(--accent);color:#1a0b00;font-weight:800;padding:13px 16px;border-radius:12px;margin-top:6px}
+    .buy{display:block;margin-top:auto !important;text-decoration:none;text-align:center;background:var(--accent);color:#1a0b00;font-weight:800;padding:14px 16px;border-radius:12px}
+    .plan p{margin-bottom:12px}
+    h1+.lede{margin-top:12px}
     .fine{color:var(--muted);font-size:14px;margin-top:22px;max-width:70ch}
   </style>
 </head>
