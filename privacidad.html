@@ -6,58 +6,218 @@
   <meta name="theme-color" content="#0b0c0f">
   <meta name="color-scheme" content="dark">
   <link rel="icon" href="/img/icono.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,600..900&family=Manrope:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600..800&family=Manrope:wght@400;600;700;800&display=swap">
   <link rel="stylesheet" href="/styles.css">
-  <style>
-    .doc{max-width:760px;padding-block:56px}
-    .doc h1{font-size:clamp(34px,6vw,56px);margin:18px 0 6px}
-    .doc h2{font-size:22px;margin:34px 0 8px}
-    .doc p,.doc li{color:var(--muted);font-size:16px;line-height:1.65}
-    .doc ul{padding-left:22px;display:grid;gap:6px}
-    .doc b{color:var(--fg)}
-    .doc a{color:var(--accent);font-weight:700}
-    .meta{color:var(--faint);font-size:14px}
-  </style>
-  <title>Política de privacidad · Ruta175</title>
-  <meta name="description" content="Qué datos usa Ruta175, para qué y cómo puedes pedir que los borremos.">
+  <title>Política de privacidad de Ruta175</title>
+  <meta name="description" content="Cómo trata Ruta175 tus datos personales según la Ley 1581 de 2012: qué datos, para qué, con quién se comparten y cómo ejercer tus derechos.">
   <link rel="canonical" href="https://ruta175.app/privacidad.html">
 </head>
 <body>
-  <main class="wrap doc">
-    <a href="/">← Ruta175</a>
-    <h1>Política de privacidad</h1>
-    <p class="meta">Última actualización: 9 de noviembre de 2026</p>
 
-    <p>Ruta175 es una app para ver la navegación y los datos de tu moto en el tablero. Esta política explica qué información usamos y para qué. La app es publicada en las tiendas por <b>FITALLY S.A.S.</b> (Colombia), que es la responsable del tratamiento de los datos, de acuerdo con la Ley 1581 de 2012.</p>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Ruta175, inicio">
+      <img src="/img/marca.svg" alt="" width="39" height="28">
+      <span>Ruta<b>175</b></span>
+    </a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="/#funciones">Funciones</a>
+      <a href="/#como">Cómo funciona</a>
+      <a href="/#precio">Precio</a>
+      <a href="/#preguntas">Preguntas</a>
+    </nav>
+    <a class="buy-btn sm" href="/comprar.html" style="margin-left:auto">Comprar</a>
+  </div>
+</header>
 
-    <h2>Qué datos usamos</h2>
-    <ul>
-      <li><b>Identificador de tu moto</b> (el del QR del tablero) y un <b>identificador aleatorio de la instalación</b>. Sirven para llevar la cuenta de la prueba gratis de 3 días, que es una por moto, y para activar tu código de compra. No guardamos tu nombre.</li>
-      <li><b>Ubicación.</b> La usamos en tu teléfono para guiarte y mostrar el mapa en el tablero. <b>No la enviamos ni la guardamos en nuestros servidores.</b> Android puede seguir usándola con la pantalla apagada mientras guías, solo si la moto está conectada o estás navegando.</li>
-      <li><b>Búsquedas y rutas.</b> Para encontrar un lugar o calcular una ruta, enviamos el texto que buscas y los puntos de la ruta a servicios de mapas externos (TomTom, OpenStreetMap/Nominatim, Photon, OSRM y Overpass). Ellos aplican sus propias políticas.</li>
-      <li><b>Notificaciones y llamadas</b> (solo si lo permites). En Android la app lee el aviso de WhatsApp, mensajes o llamadas para mostrarlo en el tablero; en iPhone, el aviso de llamada entrante. Esa información se muestra en el tablero y <b>no sale de tu teléfono</b>.</li>
-      <li><b>Compras.</b> Si compras en la tienda, el pago lo procesan Apple o Google y la suscripción se administra con <b>RevenueCat</b>, que recibe un identificador de instalación y el estado de tu compra. Si pagas en la web, el pago lo procesa <b>Wompi</b> (Bancolombia) y nosotros guardamos el número de la transacción, el monto, el método y tu correo si lo diste, para entregarte tu código. Nunca vemos los datos de tu tarjeta o cuenta.</li>
-      <li><b>Mensajes que nos envías.</b> Si usas «Reportar un error o dar tu opinión», guardamos tu mensaje, tu contacto (si lo escribes), la versión de la app, el sistema del teléfono y, solo si lo dejas activado, el registro de la conexión con la moto.</li>
-      <li><b>Red local.</b> La app se conecta al WiFi del tablero para enviar el mapa. No modifica nada de la moto.</li>
-    </ul>
+<main class="wrap legal">
+    <article>
+      <a class="legal-back" href="/">Volver al inicio</a>
+      <h1>Política de privacidad</h1>
+      <p class="legal-lead">Esta política explica qué datos personales trata Ruta175, para qué, con quién los compartimos y cómo puedes ejercer tus derechos. Cumple el artículo 15 de la Constitución, la Ley 1581 de 2012 y el Decreto 1074 de 2015 (Título 2.2.2, Capítulo 25, que incorpora el Decreto 1377 de 2013).</p>
+      <p class="legal-meta">Política de tratamiento de datos personales, versión 2.1, vigente desde el 10 de noviembre de 2026.</p>
 
-    <h2>Qué no hacemos</h2>
-    <ul>
-      <li>No vendemos tus datos ni los usamos para publicidad.</li>
-      <li>No usamos herramientas de análisis ni seguimiento de terceros dentro de la app.</li>
-    </ul>
+      <section>
+        <h2 id="responsable-del-tratamiento"><span class="n">01</span>Responsable del tratamiento</h2>
+        <p>El responsable del tratamiento, en los términos del literal e) del artículo 3 de la Ley 1581 de 2012, es <b>Felipe Torres Montoya</b>, persona natural, quien desarrolla y vende Ruta175 («nosotros»).</p>
+        <div class="ficha">
+          <p><b>Cédula de ciudadanía:</b> 1.022.157.542</p>
+          <p><b>Domicilio:</b> Calle 52 # 54-61, Bello, Antioquia, Colombia</p>
+          <p><b>Teléfono:</b> <a href="tel:+573017379730">+57 301 737 9730</a></p>
+          <p><b>Correo para temas de datos personales:</b> <a href="mailto:rutaadx175@gmail.com">rutaadx175@gmail.com</a></p>
+        </div>
+        <p>El correo es el canal oficial para consultas, reclamos y el ejercicio de tus derechos. En App Store la app aparece publicada por la cuenta de desarrollador de FITALLY S.A.S., que solo presta esa cuenta para distribuirla. FITALLY no recibe ni trata tus datos.</p>
+      </section>
+      <section>
+        <h2 id="a-que-se-aplica-esta-politica"><span class="n">02</span>A qué se aplica esta política</h2>
+        <ul>
+          <li>La app <b>Ruta175</b> para iPhone y Android, que conecta tu celular al tablero TFT de la SYM ADX TG 175.</li>
+          <li>El sitio <b>ruta175.app</b>, incluida la compra de planes con Wompi.</li>
+        </ul>
+      </section>
+      <section>
+        <h2 id="datos-que-tratamos"><span class="n">03</span>Datos que tratamos</h2>
+        <ul>
+          <li><b>Identificador de tu moto</b> (el del QR del tablero) y un <b>identificador aleatorio de la instalación</b>. No pedimos tu nombre ni crear una cuenta.</li>
+          <li><b>Prueba y planes:</b> la fecha en que tu moto se conectó por primera vez, el tipo de plan, el código de activación y sus fechas.</li>
+          <li><b>Compras en la tienda:</b> el estado de tu compra, que nos informa RevenueCat. Nunca recibimos tus datos de pago.</li>
+          <li><b>Pagos en la web:</b> el número de la transacción de Wompi, el plan, el monto, el medio de pago, la fecha, el código entregado y tu correo si lo diste en Wompi. <b>No guardamos tarjetas ni claves bancarias</b>: no pasan por nuestros servidores.</li>
+          <li><b>Soporte:</b> los mensajes que nos envías con «Reportar un error o dar tu opinión», tu contacto si lo escribes, la versión de la app, el sistema del celular y, solo si lo dejas activado, el registro técnico de la conexión con la moto.</li>
+        </ul>
+        <p><b>Datos que se quedan en tu celular y no recibimos:</b> tu ubicación, tus destinos recientes, tus ajustes, el color de tu moto y el contenido de las notificaciones que se muestran en el tablero.</p>
+        <p><b>Lo que no recogemos:</b> contactos, micrófono, fotos ni archivos. Tampoco usamos herramientas de análisis o publicidad de terceros, ni rastreamos tu actividad en otras apps o sitios.</p>
+        <p><b>Datos sensibles:</b> no recogemos datos sensibles en los términos del artículo 5 de la Ley 1581 de 2012, incluidos los biométricos. No consultamos ni reportamos a centrales de riesgo, así que la Ley 1266 de 2008 no se aplica a estos datos.</p>
+      </section>
+      <section>
+        <h2 id="permisos-del-celular"><span class="n">04</span>Permisos del celular</h2>
+        <p>La app solo pide los permisos que necesita, y puedes quitarlos cuando quieras en los ajustes del celular:</p>
+        <ul>
+          <li><b>Cámara:</b> solo para leer el QR del tablero. No toma ni guarda fotos.</li>
+          <li><b>Ubicación:</b> para guiarte y dibujar el mapa en el tablero. Se usa en tu celular y <b>no se envía a nuestros servidores</b>. En Android puede seguir activa con la pantalla apagada, con un aviso fijo, solo mientras la moto está conectada o estás navegando.</li>
+          <li><b>Red local y WiFi:</b> para unirse al WiFi del tablero y enviarle el mapa. Esa comunicación no sale de la red entre tu celular y la moto.</li>
+          <li><b>Bluetooth:</b> para controlar las luces RGB de la moto.</li>
+          <li><b>Acceso a notificaciones (Android):</b> para mostrar en el tablero los avisos de las apps que elijas, como WhatsApp, y de las llamadas. En iPhone solo detecta la llamada entrante, sin nombre ni número. Nada de esto sale de tu celular.</li>
+          <li><b>Internet:</b> para buscar lugares, calcular rutas, descargar el mapa y validar tu plan.</li>
+        </ul>
+      </section>
+      <section>
+        <h2 id="para-que-usamos-los-datos"><span class="n">05</span>Para qué usamos los datos</h2>
+        <ol>
+          <li>Conectar tu celular con el tablero y mostrar la navegación, los datos de la moto y los avisos.</li>
+          <li>Controlar la prueba gratis de 3 días, que es una por moto.</li>
+          <li>Activar, validar y restaurar tu plan, y recuperar tu código si lo pierdes.</li>
+          <li>Procesar los pagos web y entregarte el código.</li>
+          <li>Atender tus consultas, reclamos, garantías, retractos y reportes de errores.</li>
+          <li>Prevenir el fraude y el uso indebido de códigos.</li>
+          <li>Cumplir obligaciones legales, contables y tributarias.</li>
+        </ol>
+        <p><b>No vendemos ni arrendamos tus datos</b>, ni los usamos para publicidad o para tomar decisiones automatizadas que te afecten. Si quisiéramos usarlos para otra finalidad, te pediríamos autorización antes.</p>
+      </section>
+      <section>
+        <h2 id="con-quien-compartimos-los-datos"><span class="n">06</span>Con quién compartimos los datos</h2>
+        <ul>
+          <li><b>Encargados en Estados Unidos:</b> Supabase (base de datos de la prueba, los códigos, los pagos web y el soporte) y RevenueCat (estado de las compras en las tiendas). Tratan los datos por nuestra cuenta, según nuestras instrucciones, y no pueden usarlos para fines propios.</li>
+          <li><b>Wompi</b> (Bancolombia, Colombia): procesa los pagos web como responsable de sus propios datos, con su propia política.</li>
+          <li><b>Apple y Google:</b> distribuyen la app y cobran las compras en sus tiendas, con sus propias políticas.</li>
+          <li><b>Servicios de mapas:</b> OpenStreetMap y Nominatim, OpenFreeMap, Photon, OSRM, Overpass y TomTom. Reciben el texto que buscas, los puntos de la ruta y la dirección IP de tu celular, nunca un dato que te identifique por nombre.</li>
+          <li><b>Autoridades</b>, cuando una ley u orden lo exija.</li>
+          <li><b>Un nuevo dueño:</b> si Ruta175 pasa a otra persona o empresa, quien la reciba quedará obligado por esta política.</li>
+        </ul>
+        <p><b>Datos fuera de Colombia.</b> Al aceptar esta política autorizas que tus datos se guarden y traten en Estados Unidos, con la finalidad exclusiva de prestarte el servicio (artículo 26 de la Ley 1581 de 2012). Además, la Superintendencia de Industria y Comercio reconoce a ese país con un nivel adecuado de protección (Circular Externa 005 de 2017). Con estos proveedores mantenemos las condiciones de transmisión que exige el Decreto 1074 de 2015.</p>
+      </section>
+      <section>
+        <h2 id="tu-autorizacion"><span class="n">07</span>Tu autorización</h2>
+        <p>Tratamos tus datos con tu autorización previa, expresa e informada (artículo 9 de la Ley 1581 de 2012). La das cuando conectas tu moto por primera vez, cuando das cada permiso del celular, cuando pagas en la web o cuando nos escribes. No usamos tu silencio como autorización. Guardamos la prueba: la fecha y hora en que tu moto se conectó, el registro de tu pago o de tu mensaje, y podemos entregártela si la pides.</p>
+        <p>Puedes revocarla total o parcialmente en cualquier momento: quitando los permisos en tu celular, desinstalando la app o escribiéndonos. La revocación no afecta lo que hicimos antes con tu autorización.</p>
+      </section>
+      <section>
+        <h2 id="tus-derechos"><span class="n">08</span>Tus derechos</h2>
+        <p>Según el artículo 15 de la Constitución y el artículo 8 de la Ley 1581 de 2012, tienes derecho a:</p>
+        <ol>
+          <li>Conocer, actualizar y rectificar tus datos.</li>
+          <li>Pedir prueba de la autorización que nos diste.</li>
+          <li>Saber, si lo pides, cómo hemos usado tus datos.</li>
+          <li>Presentar quejas ante la Superintendencia de Industria y Comercio, después de hacer tu consulta o reclamo ante nosotros.</li>
+          <li>Revocar la autorización y pedir que borremos tus datos, salvo que haya un deber legal o contractual de conservarlos.</li>
+          <li>Acceder gratis a tus datos.</li>
+        </ol>
+        <p>Pueden ejercer estos derechos el titular, sus causahabientes, su representante o apoderado, o quien actúe por estipulación a favor de otro. Ejercerlos es gratis.</p>
+      </section>
+      <section>
+        <h2 id="como-hacer-consultas-y-reclamos"><span class="n">09</span>Cómo hacer consultas y reclamos</h2>
+        <p>Escríbenos a <a href="mailto:rutaadx175@gmail.com">rutaadx175@gmail.com</a> con el asunto <b>«Protección de datos»</b>. Incluye qué necesitas, cómo contactarte y, si lo tienes, tu código de activación o el número de tu pago. Como no guardamos tu nombre, eso nos permite ubicar tus datos. También puedes escribirnos desde la app con <b>Reportar un error o dar tu opinión</b>, en la sección Ayuda de Ajustes.</p>
+        <ul>
+          <li><b>Consultas</b> (artículo 14): te respondemos en máximo 10 días hábiles. Si no alcanzamos, te explicamos por qué y te damos una nueva fecha, que no pasará de 5 días hábiles después del primer plazo.</li>
+          <li><b>Reclamos</b> (artículo 15), para corregir, borrar o revocar:
+            <ul>
+              <li>Si al reclamo le falta información, te la pedimos dentro de los 5 días hábiles siguientes. Si pasan 2 meses sin que la envíes, entendemos que desististe.</li>
+              <li>Cuando el reclamo esté completo, marcamos tus datos con la leyenda «reclamo en trámite» en máximo 2 días hábiles.</li>
+              <li>Te respondemos en máximo 15 días hábiles, prorrogables 8 días hábiles más si te explicamos el motivo.</li>
+            </ul>
+          </li>
+        </ul>
+        <p>Después de este trámite puedes acudir a la Superintendencia de Industria y Comercio (<a href="https://www.sic.gov.co" target="_blank" rel="noopener">sic.gov.co</a>).</p>
+      </section>
+      <section>
+        <h2 id="borrar-tus-datos"><span class="n">10</span>Borrar tus datos</h2>
+        <p>Puedes pedir que borremos tus datos en cualquier momento, sin dar explicaciones, con el trámite de la sección 9. Borramos el registro de tu moto, tus códigos y tus mensajes. Solo conservamos lo que la ley nos obliga a guardar, como el registro contable de un pago. Lo que está en tu celular se borra al desinstalar la app.</p>
+        <p>Si borramos el registro de tu moto, perderás el plan que tenga activo.</p>
+      </section>
+      <section>
+        <h2 id="seguridad"><span class="n">11</span>Seguridad</h2>
+        <ul>
+          <li>Todas las comunicaciones con nuestros servidores van cifradas con TLS (HTTPS).</li>
+          <li>El acceso a la base de datos está restringido y protegido con reglas por registro.</li>
+          <li>Los datos de tarjetas y claves bancarias no pasan por nuestros servidores.</li>
+        </ul>
+        <p>Si ocurre un incidente que afecte tus datos, lo informaremos a la Superintendencia de Industria y Comercio y a ti, según el literal n) del artículo 17 de la Ley 1581 de 2012.</p>
+      </section>
+      <section>
+        <h2 id="cuanto-tiempo-los-guardamos"><span class="n">12</span>Cuánto tiempo los guardamos</h2>
+        <ul>
+          <li><b>Moto, instalación, prueba y códigos:</b> mientras Ruta175 esté en funcionamiento, para respetar la prueba de una vez por moto y los planes de por vida, o hasta que pidas borrarlos.</li>
+          <li><b>Pagos web:</b> hasta 10 años (artículo 60 del Código de Comercio y normas tributarias).</li>
+          <li><b>Mensajes de soporte</b>, con el registro técnico que adjuntes: hasta 2 años después de resolverlos.</li>
+        </ul>
+      </section>
+      <section>
+        <h2 id="sitio-web-y-cookies"><span class="n">13</span>Sitio web y cookies</h2>
+        <p>ruta175.app <b>no usa cookies</b> ni herramientas de análisis o publicidad. El sitio se aloja en GitHub Pages y carga sus fuentes desde Google Fonts. Ambos reciben la dirección IP de tu navegador para entregar las páginas, según sus propias políticas. Al pagar, sales a la página de Wompi, que tiene sus propias reglas.</p>
+      </section>
+      <section>
+        <h2 id="menores-de-edad"><span class="n">14</span>Menores de edad</h2>
+        <p>Ruta175 está dirigida a conductores de moto mayores de 18 años. No recogemos a sabiendas datos de menores. Si detectamos datos de un menor, los borramos. Si eres su padre, madre o representante legal, escríbenos a <a href="mailto:rutaadx175@gmail.com">rutaadx175@gmail.com</a>.</p>
+      </section>
+      <section>
+        <h2 id="vigencia-y-cambios"><span class="n">15</span>Vigencia y cambios</h2>
+        <p>Esta política rige desde el 10 de noviembre de 2026. Si hacemos un cambio importante, lo avisaremos en la app y en este sitio antes de aplicarlo, y te pediremos una nueva autorización cuando la ley lo exija.</p>
+      </section>
+    </article>
+</main>
 
-    <h2>Dónde se guardan</h2>
-    <p>Los datos de la prueba, los códigos, los pagos web y los mensajes viven en <b>Supabase</b> (servidores en Estados Unidos). El resto se queda en tu teléfono.</p>
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="/" aria-label="Ruta175, inicio">
+          <img src="/img/marca.svg" alt="" width="35" height="25">
+          <span>Ruta<b>175</b></span>
+        </a>
+        <p>Tu celular en el tablero de tu SYM ADX TG 175. Hecha en Colombia.</p>
+      </div>
+      <nav class="foot-cols" aria-label="Pie de página">
+        <div>
+          <h3>Ruta175</h3>
+          <a href="/#funciones">Funciones</a>
+          <a href="/#como">Cómo funciona</a>
+          <a href="/#preguntas">Preguntas</a>
+          <a href="/comprar.html">Comprar un plan</a>
+        </div>
+        <div>
+          <h3>Legal</h3>
+          <a href="/terminos.html">Términos y condiciones</a>
+          <a href="/privacidad.html">Privacidad</a>
+        </div>
+        <div>
+          <h3>Contacto</h3>
+          <a href="mailto:rutaadx175@gmail.com">rutaadx175@gmail.com</a>
+        </div>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <p>© <span id="year">2026</span> Ruta175. Mapas © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> y <a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a>.</p>
+      <p>Ruta175 es un proyecto independiente y no está afiliado a SYM. SYM y ADX son marcas de sus dueños; se mencionan solo para indicar con qué moto funciona la app.</p>
+    </div>
+  </div>
+</footer>
 
-    <h2>Tus derechos</h2>
-    <p>Puedes conocer, actualizar, corregir y pedir que borremos tus datos, o revocar tu autorización. Escríbenos desde la app, en <b>Ajustes → Ayuda → Reportar un error o dar tu opinión</b>, o a <a href="mailto:rutaadx175@gmail.com">rutaadx175@gmail.com</a>, e indica qué necesitas y, si tienes uno, tu código de activación o el número de tu pago. Atendemos las solicitudes en un máximo de 15 días hábiles. Desinstalar la app borra lo que está en tu teléfono.</p>
 
-    <h2>Menores de edad</h2>
-    <p>Ruta175 es para conductores de moto y no está dirigida a menores de 14 años.</p>
-
-    <h2>Cambios</h2>
-    <p>Si cambiamos esta política, publicaremos la nueva versión aquí con su fecha.</p>
-  </main>
+<script>
+  // Encabezado con borde al bajar
+  const header = document.querySelector('.top');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+</script>
 </body>
 </html>
