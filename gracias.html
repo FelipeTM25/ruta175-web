@@ -41,8 +41,10 @@
         $('copy').onclick = () => navigator.clipboard.writeText(r.codigo).then(() => ($('copy').textContent = 'Copiado ✓'));
         return;
       }
-      if (r.estado === 'PENDING' && ++intentos < 40) { msg('Pago en proceso…', 'Tu banco aún no confirma. No cierres esta página.'); return setTimeout(mirar, 4000); }
-      if (r.estado === 'DECLINED' || r.estado === 'VOIDED') return msg('El pago no se aprobó', 'No se te cobró nada. Puedes intentarlo de nuevo en ruta175.app/comprar.html');
+      if (r.estado === 'PENDING' && ++intentos < 60) { msg('Confirmando tu pago…', 'Estamos esperando la confirmación del banco. No cierres esta página.'); return setTimeout(mirar, 4000); }
+      if (r.estado === 'PENDING') return msg('Tu pago todavía no llega confirmado', 'Si ya te descontaron, escríbenos a rutaadx175@gmail.com con el comprobante de Wompi y te enviamos el código. Puedes volver a abrir esta página en unos minutos.');
+      if (r.estado === 'DECLINED' || r.estado === 'VOIDED') return msg('El pago no se aprobó', 'Si no se aprobó, no se te cobró nada. Puedes intentarlo de nuevo en ruta175.app/comprar.html');
+      if (r.estado === 'ERROR' && r.detalle) return msg('Demasiadas consultas', 'Espera un minuto y recarga esta página.');
       msg('No pudimos confirmar el pago', 'Si te descontaron, escríbenos con tu comprobante de Wompi y te damos el código.');
     } catch { msg('Sin conexión', 'Recarga esta página para ver tu código.'); }
   }

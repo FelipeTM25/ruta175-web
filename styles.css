@@ -312,3 +312,13 @@ footer .foot-bottom p { max-width: 90ch; }
 @media (max-width: 560px) {
   .legal section { padding-block: 32px; }
 }
+
+/* Antes de pagar: información y aceptación de los términos */
+.pay-terms { max-width: 760px; margin: 40px auto 0; padding: 24px 26px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
+.pay-terms h2 { font-size: 22px; margin: 0 0 12px; }
+.pay-terms ul { margin: 0 0 18px; padding-left: 20px; color: var(--muted); line-height: 1.6; }
+.pay-terms li + li { margin-top: 8px; }
+.pay-terms a { color: var(--accent); }
+.pay-accept { display: flex; gap: 12px; align-items: flex-start; font-weight: 700; cursor: pointer; }
+.pay-accept input { width: 22px; height: 22px; margin-top: 2px; accent-color: var(--accent); flex: none; }
+.plan-btn[aria-disabled="true"] { opacity: .45; cursor: not-allowed; }
